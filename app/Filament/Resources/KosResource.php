@@ -11,7 +11,9 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class KosResource extends Resource
 {
@@ -50,12 +52,16 @@ class KosResource extends Resource
                     ->default('tersedia')
                     ->required(),
 
-                Forms\Components\FileUpload::make('gambar')
+                Forms\Components\SpatieMediaLibraryFileUpload::make('gambar')
                     ->directory('gambar_kos')
                     ->disk('public')
+                    ->visibility('public')
                     ->imageEditor()
                     ->imagePreviewHeight('200px')
                     ->required()
+                    ->multiple()
+                    ->reorderable()
+                    ->collection('gambar')
             ])->columns(2);
     }
 
@@ -83,9 +89,9 @@ class KosResource extends Resource
 
                 Tables\Columns\TextColumn::make('status')
                     ->sortable(),
-
                 Tables\Columns\ImageColumn::make('gambar')
                     ->disk('public')
+                    ->visibility('public')
                     ->circular()
                     ->height(50),
 

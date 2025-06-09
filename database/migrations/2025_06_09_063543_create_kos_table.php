@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->string('nomor_kamar');
             $table->string('status');
-            $table->string('gambar');
+            $table->string('gambar')->nullable()->change();// Assuming 'gambar' is a string for file path
             $table->timestamps();
         });
     }
