@@ -51,7 +51,10 @@ class KosResource extends Resource
                     ->required(),
 
                 Forms\Components\FileUpload::make('gambar')
-                    ->image()
+                    ->directory('gambar_kos')
+                    ->disk('public')
+                    ->imageEditor()
+                    ->imagePreviewHeight('200px')
                     ->required()
             ])->columns(2);
     }
@@ -83,6 +86,9 @@ class KosResource extends Resource
 
                 Tables\Columns\ImageColumn::make('gambar')
                     ->disk('public')
+                    ->circular()
+                    ->height(50),
+
             ])
             ->filters([
                 //
