@@ -11,7 +11,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="bg-white sticky w-full z-20 top-0 start-0 border-b border-gray-200 shadow-lg">
@@ -21,9 +23,26 @@
                 <span class="self-center text-2xl font-semibold whitespace-nowrap text-blue-500">Omahku</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <a href="{{}}"
-                    class="tetx-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none cursor-pointer font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Mulai
-                    Sekarang</a>
+                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" type="button"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg md:gap-3 text-sm px-5 py-2.5 text-center inline-flex items-center ">Masuk
+                    Sebagai
+                    <i class="ri-arrow-drop-down-line text-base"></i>
+                </button>
+            </div>
+            <!-- Dropdown menu -->
+            <div id="dropdown"
+                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                    <li>
+                        <a href="/login"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pencari Kos</a>
+                    </li>
+                    <li>
+                        <a href="admin/login"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Pemilik Kos
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -31,7 +50,8 @@
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
             <div class="mr-auto place-self-center lg:col-span-7">
                 <h1
-                    class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Selamat Datang di Sistem Reservasi Kos</h1>
+                    class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                    Selamat Datang di Sistem Reservasi Kos</h1>
                 <p class=" mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From
                     checkout to global sales tax compliance, companies around the world use Flowbite to simplify their
                     payment stack.</p>
