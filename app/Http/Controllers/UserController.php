@@ -15,7 +15,7 @@ class UserController extends Controller
     public function show($id)
     {
         // Logic to retrieve and display a specific user
-        $kost
+        return view('users.show');
     }
 
     public function create()

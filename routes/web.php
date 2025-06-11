@@ -19,6 +19,8 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 Route::get('/dashboardPenyewa', function () {
     return view('dashboardPenyewa');
@@ -28,3 +30,4 @@ Route::get('/dashboardPenyewa', function () {
 Route::get('/', function () {
     return view('home');
 });
+
